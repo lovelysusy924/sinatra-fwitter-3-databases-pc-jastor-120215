@@ -1,6 +1,6 @@
 require_relative "../../config/environment.rb"
 
-class Tweet < ActiveRecord::Base
+class Tweet
   attr_accessor :user, :status
   
   ALL = []
