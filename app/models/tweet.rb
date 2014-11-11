@@ -1,5 +1,3 @@
-require_relative "../../config/environment.rb"
-
 class Tweet
   attr_accessor :user, :status
   
