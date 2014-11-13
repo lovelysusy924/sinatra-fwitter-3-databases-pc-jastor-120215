@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
     # Tweet.new("Vanessa", "My second tweet! Still super exciting!!!")
     # Tweet.new("Vanessa", "A third tweet! ZOMG!!!")
     @tweets = Tweet.all
-    erb :index
+    erb :tweets
   end
 
   post '/tweets' do
