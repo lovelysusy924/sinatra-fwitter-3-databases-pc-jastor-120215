@@ -2,7 +2,7 @@ require_relative "../../config/environment"
 require './app/models/tweet'
 
 class ApplicationController < Sinatra::Base
-
+  
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -20,4 +20,5 @@ class ApplicationController < Sinatra::Base
     Tweet.new(params[:user], params[:status])
     redirect '/tweets'
   end
+
 end
