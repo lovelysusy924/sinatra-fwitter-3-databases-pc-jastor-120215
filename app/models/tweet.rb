@@ -9,8 +9,8 @@ class Tweet
     ALL << self
   end
 
-  # def user
-  #   @user
+  # def username
+  #   @username
   # end
 
   # def status
