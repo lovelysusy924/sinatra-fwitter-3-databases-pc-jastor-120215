@@ -11,13 +11,14 @@
 
       <h2>Tweets!</h2>
       <% @tweets.each do |tweet| %>
-        <p><strong><%= tweet.username %>:</strong> <%= tweet.status %></p>
+        <p><strong><%= tweet.username %>:</strong> <%= tweet.status %> - <%= tweet.time_stamp %></p>
       <% end %>
 
       <h2>Add a tweet</h2>
       <form action="/tweets" method="POST">
         <p>Username: <input type="text" name="username"></p>
         <p>Status: <input type="text" name="status"></p>
+        <p><input type="hidden" name="time_stamp" value="<%= DateTime.now.strftime("%B %d, %Y - %I:%M%p") %>"></p>
         <input class="btn btn-primary" type="submit">
       </form>
       
