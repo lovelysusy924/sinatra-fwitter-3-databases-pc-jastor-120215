@@ -1,6 +1,5 @@
 require './config/environment'
 require './app/models/tweet'
-require 'pry'
 
 class ApplicationController < Sinatra::Base
   
