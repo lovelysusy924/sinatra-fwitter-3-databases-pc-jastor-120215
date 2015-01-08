@@ -1,13 +1,13 @@
 class Tweet
   attr_accessor :username, :status, :time_stamp
   
-  ALL = []
+  ALL_TWEETS = []
 
   def initialize(username, status, time_stamp)
     @username = username
     @status = status
     @time_stamp = time_stamp
-    ALL << self
+    ALL_TWEETS << self
   end
 
   # def username
@@ -19,6 +19,6 @@ class Tweet
   # end
 
   def self.all
-    ALL
+    ALL_TWEETS
   end
 end
