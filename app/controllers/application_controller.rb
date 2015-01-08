@@ -1,4 +1,4 @@
-require_relative "../../config/environment"
+require './config/environment'
 require './app/models/tweet'
 require 'pry'
 
@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/tweets' do
-    binding.pry
+    # binding.pry
     Tweet.new(params[:username], params[:status], params[:time_stamp])
     redirect '/tweets'
   end
