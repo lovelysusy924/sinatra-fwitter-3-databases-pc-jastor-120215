@@ -1,12 +1,11 @@
 class Tweet
-  attr_accessor :username, :status, :time_stamp
+  attr_accessor :username, :status
   
   ALL_TWEETS = []
 
-  def initialize(username, status, time_stamp)
+  def initialize(username, status)
     @username = username
     @status = status
-    @time_stamp = time_stamp
     ALL_TWEETS << self
   end
 
