@@ -9,19 +9,23 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/tweets' do
+  get '/' do
     # Tweet.new("Vanessa", "My first tweet! SO EXCITING OMG!!!")
     # Tweet.new("Vanessa", "My second tweet! Still super exciting!!!")
     # Tweet.new("Vanessa", "A third tweet! ZOMG!!!")
     @tweets = Tweet.all
-    erb :tweets
+    erb :index
   end
 
+  get '/tweets' do
+    erb :tweets 
+  end
+  
   post '/tweets' do
     # puts params
     # binding.pry
     Tweet.new(params[:username], params[:status])
-    redirect '/tweets'
+    redirect_to '/'
   end
 
 end
