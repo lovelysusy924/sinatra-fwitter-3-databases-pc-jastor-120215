@@ -3,7 +3,7 @@ require './app/models/tweet'
 require 'pry'
 
 class ApplicationController < Sinatra::Base
-  
+
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -17,11 +17,11 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  get '/tweets' do
-    erb :tweets 
+  get '/tweet' do
+    erb :tweet
   end
-  
-  post '/tweets' do
+
+  post '/tweet' do
     # puts params
     # binding.pry
     Tweet.new(params[:username], params[:status])
