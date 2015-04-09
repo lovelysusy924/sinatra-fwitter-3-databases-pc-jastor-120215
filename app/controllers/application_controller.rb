@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
     # puts params
     # binding.pry
     Tweet.new(params[:username], params[:status])
-    redirect_to '/'
+    redirect '/'
   end
 
 end
