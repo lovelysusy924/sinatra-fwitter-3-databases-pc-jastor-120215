@@ -15,3 +15,4 @@ This iteration of Fwitter focuses on creating forms. The forms in this lesson ar
   * We have to create a `post` request in here that is the same route defined in the `action` attribute.
   * This controller action receives the information from the user via the `params` hash. The value of the `name` attribute becomes the key of the hash, and what the user entered becomes the value.
   * we can use the params hash to create new instances of our tweet class
+  * The post route gets redirected back to the home page to display the new tweets
