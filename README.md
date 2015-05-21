@@ -1,8 +1,6 @@
 # Fwitter Project!
 
-_You can read today's specific notes [here](DAY02-MVC.md)_
-
-This repository holds branches for every iteration of the Fwitter Project.
+This repository holds branches for every iteration of the Fwitter Project
 
 - [Day 1- MVC]()
 
@@ -10,5 +8,6 @@ This repository holds branches for every iteration of the Fwitter Project.
 
 - [Day 3 - Databases]()
 
+- [Day 4 - ActiveRecord Associations]()
+
 - [Day 5 - Session and Authorization]()
-. 
