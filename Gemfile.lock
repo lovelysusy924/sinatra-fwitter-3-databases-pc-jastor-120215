@@ -40,3 +40,6 @@ DEPENDENCIES
   pry
   sinatra
   tux
+
+BUNDLED WITH
+   1.10.3

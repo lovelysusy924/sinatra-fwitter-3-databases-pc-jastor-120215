@@ -1,5 +1,5 @@
 class Tweet
-  attr_accessor :username, :status
+  attr_accessor :username, :status # Using attr_accessor automatically gives us methods to read and write the username and status. 
   
   ALL_TWEETS = []
 
@@ -8,6 +8,7 @@ class Tweet
     @status = status
     ALL_TWEETS << self
   end
+
 
   # def username
   #   @username
