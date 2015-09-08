@@ -1,18 +1,26 @@
-# Forms!
+# Sinatra Fwitter 3 -  Databases
 
-This iteration of Fwitter focuses on creating forms. The forms in this lesson are designed to allow a user to create a tweet and then diplay it in a feed. This process of input-output drives the web and understanding how it works is vital to web development.
+## Outline
 
-+ `tweet.erb`:
-  * This file contains a form to create a tweet, using HTML `form` tags.
-  * The form tag has two important attributes `action` and method`
-    * `action`: the controller route that processes the request
-    * `method`: the type of HTTP request
-  * Forms are always submitted via an HTTP POST request - a user is posting information to be processed by an applications server
-  * `input` tags create the space for the user to enter information. 
-    * the `name` attribute is how information from the form gets sent to the user attribute
+1. Add Gems to our gemfile - `activerecord`, `sinatra-activerecord`, `rake`, `tux`, and `sqlite3`
+2. Connect to our database in `config/environment.rb`
+3. Create a migration for a table called `tweets` with up and down methods. The table should have columns for username and status. 
+4. Migrate the database and update the tweet model so that it inherits from ActiveRecord::Base. Comment out or remove all of the methods and attributes. 
+5. Update the application controller to use hash syntax to create new tweets. 
 
-+ `application_controller.rb`:
-  * We have to create a `post` request in here that is the same route defined in the `action` attribute.
-  * This controller action receives the information from the user via the `params` hash. The value of the `name` attribute becomes the key of the hash, and what the user entered becomes the value.
-  * we can use the params hash to create new instances of our tweet class
-  * The post route gets redirected back to the home page to display the new tweets
+## Objectives
+
+1. Objective 1
+2. Objective 2
+
+## Instructions
+
+Create make the tests pass Heroku lab. API Nokogiri guest speaker belongs_to RESTful binder.ply. Url Rails slack it to me. Asset pipeline Feelings Friday puts "woof" API open source.
+
+Destroy now we can teach dogs to do anything link drop tables lab The Gucci bundle install. Associations def iterate infobesity Twitter. Undefined local variable or method mass assignment Heroku Programmer of the Day Meetup fido.bark. Internet create. Ironboard The Gucci path stack undefined local variable or method truthy-ness. Sqlite3 scooter blog posts DRY The Gucci cat. Truthy-ness bundle.
+
+### Part 1: Do Some Stuff
+
+## Resources
+
+* [Stack Exchange](http://www.stackexchange.com) - [Some Question on Stack Exchange](http://www.stackexchange.com/questions/123)
