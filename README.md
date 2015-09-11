@@ -233,7 +233,31 @@ It may not look like much, but our Tweet class actually has all of the same meth
 
 ### Updating our Controller
 
+Finally, we need to update how our tweets are being created in our application controller. ActiveRecord uses hash syntax for creating and updating objects. This is nice for a few reasons.
 
-## Resources
+1). We don't need to know what order to list our attributes.
+2). We can create objects without certain attributse if we want (ie we could make a tweet with no username).
 
-* [Stack Exchange](http://www.stackexchange.com) - [Some Question on Stack Exchange](http://www.stackexchange.com/questions/123)
+In the application controller, update your `post 'tweet'` route as follows. 
+
+```ruby
+post '/tweet' do
+  Tweet.create(:username => params[:username], :status => params[:status])
+  redirect '/' 
+end
+``` 
+
+The `create` method automatically saves the tweet to our database. This is the same as writing:
+
+```ruby
+post '/tweet' do
+  tweet = Tweet.new(:username => params[:username], :status => params[:status])
+  tweet.save
+  redirect '/' 
+end
+``` 
+
+Run `shotgun` and tweet away! You'll now be able to quit the server, change your code, or restart your computer. When you come back to the project, your tweets will still be there! 
+
+## Conclusion
+We now have the ability to persist data in our web applications - awesome job! 
