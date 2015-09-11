@@ -1,13 +1,5 @@
 # Sinatra Fwitter 3 -  Databases
 
-## Outline
-
-1. Add Gems to our gemfile - `activerecord`, `sinatra-activerecord`, `rake`, `tux`, and `sqlite3`
-2. Connect to our database in `config/environment.rb`
-3. Create a migration for a table called `tweets` with up and down methods. The table should have columns for username and status. 
-4. Migrate the database and update the tweet model so that it inherits from ActiveRecord::Base. Comment out or remove all of the methods and attributes. 
-5. Update the application controller to use hash syntax to create new tweets. 
-
 ## Objectives
 
 1. Create a connection to a sqlite database with activerecord in a Sinatra application.
