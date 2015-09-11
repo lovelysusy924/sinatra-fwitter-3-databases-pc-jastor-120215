@@ -13,10 +13,10 @@ We're back for Fwitter Part 3! We'll be incorporating a database into our applic
 ## Instructions
 
 ### Setup
-Fork and clone this repository to get started. 
+Fork and clone this repository to get started!
 
 ### Updating Our Gemfile
-First, we'll add some gems to our Gemfile that we'll need to setup our database. `activerecord` and `sinatra-activerecord` will setup our ActiveRecord magic for us, `rake` will help us easily create migration files for setting up our tables. We'll also be using `sqlite3` as our flavor of SQL in development.
+First, we'll add some gems to our Gemfile that we'll need to setup our database:  `activerecord` and `sinatra-activerecord` will setup our ActiveRecord magic for us, `rake` will help us easily create migration files for setting up our tables. We'll also be using `sqlite3` as our flavor of SQL in development.
 
 ```ruby
 source "https://rubygems.org"
