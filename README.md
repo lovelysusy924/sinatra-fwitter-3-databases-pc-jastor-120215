@@ -2,10 +2,10 @@
 
 ## Objectives
 
-1. Create a connection to a sqlite database with activerecord in a Sinatra application.
+1. Create a connection to a sqlite database with ActiveRecord in a Sinatra application.
 2. Understand how to use ActiveRecord migrations to create a table. 
 3. Update and use a model inheriting from ActiveRecord::Base. 
-4. Create and persis tweets in our database
+4. Create and persist tweets in our database
 
 ## Overview
 We're back for Fwitter Part 3! We'll be incorporating a database into our application so we can persist out tweets.
@@ -87,7 +87,7 @@ rake db:setup               # Create the database, load the schema, and ini...
 rake db:structure:dump      # Dump the database structure to db/structure.sql
 rake db:version             # Retrieves the current schema version number
 ```
-Nice work! If you're not sure the name of a Rake tast you want to run, you can always bring up this list with `rake -T`
+Nice work! If you're not sure the name of a Rake task you want to run, you can always bring up this list with `rake -T`
 
  ### Creating our Migration
  
@@ -99,11 +99,11 @@ Nice work! If you're not sure the name of a Rake tast you want to run, you can a
  No NAME specified. Example usage: `rake db:create_migration NAME=create_users`
  ```
  
- What a helpful error - thanks, Rake! This says that we need to give our migration a name. In general, your migration names should describe what they are doing. Since we're creating a table called tweets, let's call this migraiton `create_tweets`. 
+ What a helpful error - thanks, Rake! This says that we need to give our migration a name. In general, your migration names should describe what they are doing. Since we're creating a table called tweets, let's call this migration `create_tweets`. 
  
- Run the following command: `rake db:create_migration NAME=create_tweets`. This will create a directory called `db`. Inside of `db` will be a directory alled `migrate`, and inside of the `migrate` directory will be a file named someting like `20141022163315_create_tweets.rb`. The beginning is a timestamp - this is important, as it ensures that our migrations will run in order. 
+ Run the following command: `rake db:create_migration NAME=create_tweets`. This will create a directory called `db`. Inside of `db` will be a directory called `migrate`, and inside of the `migrate` directory will be a file named something like `20141022163315_create_tweets.rb`. The beginning is a timestamp - this is important, as it ensures that our migrations will run in order. 
  
- Inside of your migration file, ActiveRecord has stubbed out the migration for us. We have a class called `CreateTweets` which inherits from `ActiveRecord::Migration` and an empty method called `change`. Replace the `change` method with two methods - one called `up` and one called `down`. asdf
+ Inside of your migration file, ActiveRecord has stubbed out the migration for us. We have a class called `CreateTweets` which inherits from `ActiveRecord::Migration` and an empty method called `change`. Replace the `change` method with two methods - one called `up` and one called `down`.
 
 ```ruby
  class CreateTweets < ActiveRecord::Migration
@@ -136,7 +136,7 @@ end
 
 This will create a table called with three columns: an ID column which will function as the primary key gets created automatically, as well as two columns we define:  username and status.
 
-The down method will function as the oppostie of our up, in case we need to rollback this migration. The opposite of `create_table` is `drop_table`, so let's add that.
+The down method will function as the opposite of our up, in case we need to rollback this migration. The opposite of `create_table` is `drop_table`, so let's add that.
 
 ```ruby
  class CreateTweets < ActiveRecord::Migration
@@ -228,7 +228,7 @@ It may not look like much, but our Tweet class actually has all of the same meth
 Finally, we need to update how our tweets are being created in our application controller. ActiveRecord uses hash syntax for creating and updating objects. This is nice for a few reasons.
 
 1). We don't need to know what order to list our attributes.
-2). We can create objects without certain attributse if we want (ie we could make a tweet with no username).
+2). We can create objects without certain attributes if we want (i.e. we could make a tweet with no username).
 
 In the application controller, update your `post 'tweet'` route as follows. 
 
