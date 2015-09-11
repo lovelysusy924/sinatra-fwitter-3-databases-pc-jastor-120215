@@ -193,7 +193,46 @@ class Tweet < ActiveRecord::Base
   end
 end
 ```
-Here's where some more ActiveRecord magic comes in. ActiveRecord gives us tons of methods to extend the abilities of our class. 
+Here's where some more ActiveRecord magic comes in. ActiveRecord gives us tons of methods to extend the abilities of our class. For one, it gives us a method called `all` which returns to us all of the tweets that have been persisted to the database. Therefore, we can get rid of our `ALL_TWEETS` array and the `all` method that we defined.
+
+```ruby
+class Tweet < ActiveRecord::Base
+  attr_accessor :username, :status
+  
+
+  def initialize(username, status)
+    @username = username
+    @status = status
+  end
+
+end
+```
+
+Our instances of tweets will also respond to methods called `username` and `status` - ActiveRecord will automatically read those properties out of the tweets table from the database. Let's get rid of those attr_accessors too.
+
+```ruby
+class Tweet < ActiveRecord::Base
+
+  def initialize(username, status)
+    @username = username
+    @status = status
+  end
+
+end
+```
+
+Finally, ActiveRecord will handle the initialization of our objects as well, so let's take out our initialize method. 
+
+```ruby
+class Tweet < ActiveRecord::Base
+
+
+end
+```
+It may not look like much, but our Tweet class actually has all of the same methods it did before and then some. It's just inheriting those properties from ActiveRecord rather than being explicitly defined.
+
+### Updating our Controller
+
 
 ## Resources
 
