@@ -61,7 +61,7 @@ No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
 (See full trace by running task with --trace)
 ```
 
-This is because we don't have a Rakefile. Let's fix this error by creating one. Create a file called `Rakefile` in the root of this directory and add the following code snippets: 
+This is because we don't have a Rakefile. Let's fix this error by creating one. Create a file called `Rakefile` with no file extension in the root of this directory. Add the following code snippets: 
 
 ```ruby
 require 'sinatra/activerecord/rake'
