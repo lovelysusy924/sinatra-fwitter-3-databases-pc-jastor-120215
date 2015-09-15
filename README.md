@@ -89,30 +89,28 @@ rake db:version             # Retrieves the current schema version number
 ```
 Nice work! If you're not sure the name of a Rake task you want to run, you can always bring up this list with `rake -T`
 
- ### Creating our Migration
+### Creating our Migration
  
- Now, we're ready to create our migration. A migration is an ActiveRecord file which sets up our schema for us. Our migrations will create tables, add or remove columns, etc. It's common for projects to have many migration files, but for now we'll just need one: to create a table for tweets. 
+Now, we're ready to create our migration. A migration is an ActiveRecord file which sets up our schema for us. Our migrations will create tables, add or remove columns, etc. It's common for projects to have many migration files, but for now we'll just need one: to create a table for tweets. 
  
- From the terminal, run `rake db:create_migration`. You should see the following output: 
+From the terminal, run `rake db:create_migration`. You should see the following output: 
  
- ```bash
- No NAME specified. Example usage: `rake db:create_migration NAME=create_users`
- ```
+```bash
+No NAME specified. Example usage: `rake db:create_migration NAME=create_users`
+```
  
- What a helpful error - thanks, Rake! This says that we need to give our migration a name. In general, your migration names should describe what they are doing. Since we're creating a table called tweets, let's call this migration `create_tweets`. 
+What a helpful error - thanks, Rake! This says that we need to give our migration a name. In general, your migration names should describe what they are doing. Since we're creating a table called tweets, let's call this migration `create_tweets`. 
  
- Run the following command: `rake db:create_migration NAME=create_tweets`. This will create a directory called `db`. Inside of `db` will be a directory called `migrate`, and inside of the `migrate` directory will be a file named something like `20141022163315_create_tweets.rb`. The beginning is a timestamp - this is important, as it ensures that our migrations will run in order. 
+Run the following command: `rake db:create_migration NAME=create_tweets`. This will create a directory called `db`. Inside of `db` will be a directory called `migrate`, and inside of the `migrate` directory will be a file named something like `20141022163315_create_tweets.rb`. The beginning is a timestamp - this is important, as it ensures that our migrations will run in order. 
  
- Inside of your migration file, ActiveRecord has stubbed out the migration for us. We have a class called `CreateTweets` which inherits from `ActiveRecord::Migration` and an empty method called `change`. Replace the `change` method with two methods - one called `up` and one called `down`.
+Inside of your migration file, ActiveRecord has stubbed out the migration for us. We have a class called `CreateTweets` which inherits from `ActiveRecord::Migration` and an empty method called `change`. Replace the `change` method with two methods - one called `up` and one called `down`.
 
 ```ruby
- class CreateTweets < ActiveRecord::Migration
+class CreateTweets < ActiveRecord::Migration
   def up
-   
   end
   
   def down
-   
   end
 end
 ```
@@ -120,7 +118,7 @@ end
 Inside of our `up` method, add the following block of code to create a table called `tweets`. **This is very important:** because we have a model called Tweet, we need to have a table called "tweets". ActiveRecord table names are always the plural of the model name. If we have a model called `Wolf`, it would correspond to a table called `wolves`. 
 
 ```ruby
- class CreateTweets < ActiveRecord::Migration
+class CreateTweets < ActiveRecord::Migration
   def up
   	create_table :tweets do |t|
   	  t.string :username
@@ -129,17 +127,16 @@ Inside of our `up` method, add the following block of code to create a table cal
   end
   
   def down
-   
   end
 end
 ```
 
-This will create a table called with three columns: an ID column which will function as the primary key gets created automatically, as well as two columns we define:  username and status.
+This will create a table called with three columns: an ID column which will function as the primary key gets created automatically, as well as two columns we define: `username` and `status`.
 
 The down method will function as the opposite of our up, in case we need to rollback this migration. The opposite of `create_table` is `drop_table`, so let's add that.
 
 ```ruby
- class CreateTweets < ActiveRecord::Migration
+class CreateTweets < ActiveRecord::Migration
   def up
   	create_table :tweets do |t|
   	  t.string :username
@@ -217,7 +214,6 @@ Finally, ActiveRecord will handle the initialization of our objects as well, so 
 
 ```ruby
 class Tweet < ActiveRecord::Base
-
 
 end
 ```
