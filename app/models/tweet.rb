@@ -9,15 +9,6 @@ class Tweet
     ALL_TWEETS << self
   end
 
-
-  # def username
-  #   @username
-  # end
-
-  # def status
-  #   @status
-  # end
-
   def self.all
     ALL_TWEETS
   end
