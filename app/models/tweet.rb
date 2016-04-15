@@ -1,15 +1,3 @@
-class Tweet
-  attr_accessor :username, :status
+class Tweet < ActiveRecord::Base
   
-  ALL_TWEETS = []
-
-  def initialize(username, status)
-    @username = username
-    @status = status
-    ALL_TWEETS << self
-  end
-
-  def self.all
-    ALL_TWEETS
-  end
 end
